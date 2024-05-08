@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_page_coordinates",
+  "info": {
+    "displayName": "coordinate",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "latitude": {
+      "type": "string",
+      "required": true
+    },
+    "longitude": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_room_page_room_welcomes",
+  "info": {
+    "displayName": "roomWelcome",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "secondTitle": {
+      "type": "text"
+    },
+    "initialLetter": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "markText": {
+      "type": "string"
+    },
+    "subText": {
+      "type": "string"
+    }
+  }
+}

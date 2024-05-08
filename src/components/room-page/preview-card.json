@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_room_page_preview_cards",
+  "info": {
+    "displayName": "PreviewCard",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

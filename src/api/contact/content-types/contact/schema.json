@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Страница контактов",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "general": {
+      "displayName": "general",
+      "type": "component",
+      "repeatable": false,
+      "component": "info-page.general",
+      "required": true
+    },
+    "contactInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact-page.contact-info",
+      "required": true
+    }
+  }
+}

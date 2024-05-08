@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_news_page_tag_filters",
+  "info": {
+    "displayName": "TagFilter",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tag": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

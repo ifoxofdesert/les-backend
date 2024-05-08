@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_contact_page_contact_infos",
+  "info": {
+    "displayName": "ContactInfo",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "text"
+    },
+    "llcName": {
+      "type": "string"
+    },
+    "ogrn": {
+      "type": "biginteger"
+    },
+    "inn": {
+      "type": "biginteger"
+    },
+    "kpp": {
+      "type": "biginteger"
+    },
+    "legalAddress": {
+      "type": "text"
+    },
+    "reservation": {
+      "displayName": "reservations",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact-page.reservations"
+    },
+    "banquet": {
+      "displayName": "banquets",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact-page.banquets"
+    }
+  }
+}

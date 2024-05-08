@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_general_offers_sliders",
+  "info": {
+    "displayName": "offersSlider",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "slideTitle": {
+      "type": "string"
+    },
+    "slideSecondTitle": {
+      "type": "string"
+    },
+    "slideDescription": {
+      "type": "string"
+    }
+  }
+}

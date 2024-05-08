@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_general_questions_blocks",
+  "info": {
+    "displayName": "QuestionsBlock",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "secondTitle": {
+      "type": "string"
+    },
+    "thirdTitle": {
+      "type": "string"
+    },
+    "accordion": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.accordion"
+    }
+  }
+}

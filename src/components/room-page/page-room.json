@@ -1,0 +1,97 @@
+{
+  "collectionName": "components_room_page_page_rooms",
+  "info": {
+    "displayName": "PageRoom",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "area": {
+      "type": "string"
+    },
+    "persons": {
+      "type": "string"
+    },
+    "viewRoom": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "travelId": {
+      "type": "biginteger"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "aboutRoom": {
+      "type": "component",
+      "repeatable": false,
+      "component": "room-page.about-room"
+    },
+    "accorionTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.title-cutom"
+    },
+    "accorionDescription": {
+      "type": "text"
+    },
+    "accordion": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.accordion"
+    },
+    "gallaryTitle": {
+      "type": "string"
+    },
+    "gallaryDescription": {
+      "type": "text"
+    },
+    "gallary": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "roomWelcome": {
+      "type": "component",
+      "repeatable": false,
+      "component": "room-page.room-welcome"
+    },
+    "roomListTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.title-cutom"
+    },
+    "offersSlider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.offers-slide"
+    },
+    "roomListDescription": {
+      "type": "text"
+    },
+    "roomList": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::room.room"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_general_rooms_list_blocks",
+  "info": {
+    "displayName": "RoomsListBlock",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_title_cutoms",
+  "info": {
+    "displayName": "titleCutom",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "first": {
+      "type": "string"
+    },
+    "second": {
+      "type": "string"
+    }
+  }
+}

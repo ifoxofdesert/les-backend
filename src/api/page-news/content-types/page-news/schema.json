@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "pages_news",
+  "info": {
+    "singularName": "page-news",
+    "pluralName": "pages-news",
+    "displayName": "Страница с новостями",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.meta"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "defaultFilter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::news-filter.news-filter"
+    }
+  }
+}

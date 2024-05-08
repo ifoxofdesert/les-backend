@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Главная страница",
+    "description": ""
+  },
+  "options": {
+    "reviewWorkflows": false,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.meta",
+      "required": true
+    },
+    "mainBlock": {
+      "displayName": "mainBlock",
+      "type": "component",
+      "repeatable": false,
+      "component": "home.main-block",
+      "required": true
+    },
+    "offersSlider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.offers-slider"
+    },
+    "video": {
+      "displayName": "video",
+      "type": "component",
+      "repeatable": false,
+      "component": "general.video"
+    },
+    "questions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.questions-block"
+    },
+    "roomsListBlock": {
+      "displayName": "RoomsListBlock",
+      "type": "component",
+      "repeatable": false,
+      "component": "general.rooms-list-block"
+    },
+    "afishaEventsBlock": {
+      "displayName": "afishaEventsBlock",
+      "type": "component",
+      "repeatable": false,
+      "component": "general.afisha-events-block"
+    }
+  }
+}

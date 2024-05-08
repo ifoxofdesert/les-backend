@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_contact_page_reservations",
+  "info": {
+    "displayName": "reservations",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "phones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::phone.phone"
+    },
+    "mails": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mail.mail"
+    }
+  }
+}

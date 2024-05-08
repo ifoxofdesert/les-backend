@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_news_page_preview_cards",
+  "info": {
+    "displayName": "PreviewCard",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "date": {
+      "type": "datetime",
+      "required": false
+    },
+    "position": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "offerTitle": {
+      "type": "string"
+    }
+  }
+}

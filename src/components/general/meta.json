@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_general_metas",
+  "info": {
+    "displayName": "Meta",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pagetitle": {
+      "type": "string",
+      "required": true
+    },
+    "pageDescription": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

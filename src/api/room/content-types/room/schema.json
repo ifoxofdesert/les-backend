@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rooms",
+  "info": {
+    "singularName": "room",
+    "pluralName": "rooms",
+    "displayName": "Страницы номеров",
+    "description": ""
+  },
+  "options": {
+    "reviewWorkflows": false,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.meta",
+      "required": true
+    },
+    "pageRoom": {
+      "type": "component",
+      "repeatable": false,
+      "component": "room-page.page-room"
+    },
+    "preview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "room-page.preview-card"
+    }
+  }
+}

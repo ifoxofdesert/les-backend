@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_home_main_blocks",
+  "info": {
+    "displayName": "mainBlock",
+    "icon": "slideshow",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mainTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.title-cutom",
+      "required": true
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "coordinate": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact-page.coordinate",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_filters",
+  "info": {
+    "singularName": "news-filter",
+    "pluralName": "news-filters",
+    "displayName": "Типы новостей",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tag": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_info_page_generals",
+  "info": {
+    "displayName": "general",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pagetitle": {
+      "type": "string",
+      "required": true
+    },
+    "pageDescription": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "lastUpdate": {
+      "type": "date"
+    }
+  }
+}

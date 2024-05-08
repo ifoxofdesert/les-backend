@@ -1,0 +1,75 @@
+{
+  "collectionName": "components_news_page_page_news",
+  "info": {
+    "displayName": "pageNews",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::news-filter.news-filter"
+    },
+    "markText": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "introText": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "textBefore": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "buttonBeforeActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "Accordion": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.accordion"
+    },
+    "textAfter": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "buttonAfterActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideTitle": {
+      "type": "string"
+    },
+    "slideText": {
+      "type": "text"
+    },
+    "slideItem": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::new.new"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "Страницы новостей",
+    "description": ""
+  },
+  "options": {
+    "reviewWorkflows": false,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PreviewCard": {
+      "displayName": "PreviewCard",
+      "type": "component",
+      "repeatable": false,
+      "component": "news-page.preview-card",
+      "required": true
+    },
+    "pageNews": {
+      "type": "component",
+      "repeatable": false,
+      "component": "news-page.page-news"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.meta",
+      "required": true
+    }
+  }
+}

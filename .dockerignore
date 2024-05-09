@@ -1,0 +1,34 @@
+############################
+# Misc.
+############################
+yarn.lock
+package-lock.json
+README.md
+.git
+
+############################
+# Node.js
+############################
+
+lib-cov
+lcov.info
+pids
+logs
+results
+node_modules
+.node_history
+
+############################
+# Tests
+############################
+
+coverage
+
+############################
+# Strapi
+############################
+
+exports
+.strapi
+dist
+build

@@ -1,7 +1,7 @@
 FROM node:20.12.0-alpine
 RUN mkdir -p /usr/src/strapi
 WORKDIR /usr/src/strapi
-RUN "apt-get install -y --no-install-recommends libvips"
+RUN apt-get install -y --no-install-recommends libvips
 COPY package.json .
 COPY . .
 ENV NODE_ENV=production

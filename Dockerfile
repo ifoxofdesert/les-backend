@@ -12,7 +12,6 @@ ENV npm_config_sharp_libvips_local_prebuilds=/usr/src/strapi/libvips/
 ENV npm_package_config_libvips=8.14.5
 RUN yarn global add node-gyp
 RUN yarn config set nodedir /usr/src/strapi/node-v20.12.0-headers.tar.gz
-RUN yarn add better-sqlite3
 RUN yarn install --network-timeout 100000
 RUN yarn build
 EXPOSE 1337

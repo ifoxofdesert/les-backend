@@ -15,7 +15,6 @@ module.exports = createCoreService('api::new.new', ({ strapi }) => ({
         populate,
       });
 
-      console.log(entries);
       const data = entries[0] || {};
 
       const getImage = strapi.service('api::general.general').getImage;
@@ -52,7 +51,6 @@ module.exports = createCoreService('api::new.new', ({ strapi }) => ({
     }
   },
   async getPreviews({ page, pageSize, sort, populate, filters }) {
-    console.log(filters);
     try {
       let entries = await strapi.entityService.findPage('api::new.new', {
         pageSize,

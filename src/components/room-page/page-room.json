@@ -16,27 +16,11 @@
     "viewRoom": {
       "type": "string"
     },
-    "img": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "description": {
       "type": "text"
     },
     "travelId": {
       "type": "biginteger"
-    },
-    "video": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "videos"
-      ]
     },
     "aboutRoom": {
       "type": "component",
@@ -80,11 +64,6 @@
       "repeatable": false,
       "component": "general.title-cutom"
     },
-    "offersSlider": {
-      "type": "component",
-      "repeatable": false,
-      "component": "general.offers-slide"
-    },
     "roomListDescription": {
       "type": "text"
     },
@@ -92,6 +71,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::room.room"
+    },
+    "offersSlider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.offers-slider"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.video"
     }
   }
 }

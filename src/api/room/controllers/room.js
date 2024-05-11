@@ -19,4 +19,17 @@ module.exports = createCoreController('api::room.room', ({ strapi }) => ({
       ctx.badRequest('error');
     }
   },
+
+  async getPage(ctx, next) {
+    try {
+      const sanitizedQueryParams = await this.sanitizeQuery(ctx);
+
+      const data = await strapi.service('api::room.room').getPage(sanitizedQueryParams);
+
+      ctx.body = data;
+    } catch (err) {
+      console.log(err);
+      ctx.badRequest('error');
+    }
+  },
 }));

@@ -14,5 +14,14 @@ module.exports = {
         middlewares: [],
       },
     },
+    {
+      method: 'GET',
+      path: '/getRoomPage',
+      handler: 'room.getPage',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };

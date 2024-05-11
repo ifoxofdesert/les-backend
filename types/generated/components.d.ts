@@ -326,10 +326,8 @@ export interface RoomPagePageRoom extends Schema.Component {
     area: Attribute.String;
     persons: Attribute.String;
     viewRoom: Attribute.String;
-    img: Attribute.Media;
     description: Attribute.Text;
     travelId: Attribute.BigInteger;
-    video: Attribute.Media;
     aboutRoom: Attribute.Component<'room-page.about-room'>;
     accorionTitle: Attribute.Component<'general.title-cutom'>;
     accorionDescription: Attribute.Text;
@@ -339,9 +337,10 @@ export interface RoomPagePageRoom extends Schema.Component {
     gallary: Attribute.Media;
     roomWelcome: Attribute.Component<'room-page.room-welcome'>;
     roomListTitle: Attribute.Component<'general.title-cutom'>;
-    offersSlider: Attribute.Component<'general.offers-slide'>;
     roomListDescription: Attribute.Text;
     roomList: Attribute.Relation<'room-page.page-room', 'oneToMany', 'api::room.room'>;
+    offersSlider: Attribute.Component<'general.offers-slider'>;
+    video: Attribute.Component<'general.video'>;
   };
 }
 

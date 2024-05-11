@@ -683,6 +683,79 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: '\u041F\u043E\u0434\u0432\u0430\u043B';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    phones: Attribute.Relation<'api::footer.footer', 'oneToMany', 'api::phone.phone'>;
+    menu: Attribute.Relation<'api::footer.footer', 'oneToMany', 'api::navigation.navigation'>;
+    navigation: Attribute.Relation<'api::footer.footer', 'oneToMany', 'api::navigation.navigation'>;
+    socials: Attribute.Relation<'api::footer.footer', 'oneToMany', 'api::social.social'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::footer.footer', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::footer.footer', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::footer.footer', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::footer.footer', 'oneToOne', 'admin::user'>;
+  };
+}
+
+export interface ApiGeneralGeneral extends Schema.SingleType {
+  collectionName: 'general';
+  info: {
+    singularName: 'general';
+    pluralName: 'generals';
+    displayName: '\u041E\u0431\u0449\u0435\u0435';
+    description: '';
+  };
+  options: {
+    reviewWorkflows: false;
+    draftAndPublish: false;
+  };
+  attributes: {
+    policyUrl: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::general.general', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::general.general', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::general.general', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::general.general', 'oneToOne', 'admin::user'>;
+  };
+}
+
+export interface ApiHeaderHeader extends Schema.SingleType {
+  collectionName: 'headers';
+  info: {
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: '\u0428\u0430\u043F\u043A\u0430';
+    description: '';
+  };
+  options: {
+    reviewWorkflows: false;
+    draftAndPublish: false;
+  };
+  attributes: {
+    logo: Attribute.Media & Attribute.Required;
+    phone: Attribute.Relation<'api::header.header', 'oneToOne', 'api::phone.phone'>;
+    menu: Attribute.Relation<'api::header.header', 'oneToMany', 'api::navigation.navigation'>;
+    socials: Attribute.Relation<'api::header.header', 'oneToMany', 'api::social.social'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::header.header', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::header.header', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::header.header', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::header.header', 'oneToOne', 'admin::user'>;
+  };
+}
+
 export interface ApiHomeHome extends Schema.SingleType {
   collectionName: 'homes';
   info: {
@@ -725,13 +798,36 @@ export interface ApiMailMail extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    mail: Attribute.Component<'general.email'>;
+    mail: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::mail.mail', 'oneToOne', 'admin::user'> & Attribute.Private;
     updatedBy: Attribute.Relation<'api::mail.mail', 'oneToOne', 'admin::user'> & Attribute.Private;
     strapi_stage: Attribute.Relation<'api::mail.mail', 'oneToOne', 'admin::workflow-stage'>;
     strapi_assignee: Attribute.Relation<'api::mail.mail', 'oneToOne', 'admin::user'>;
+  };
+}
+
+export interface ApiNavigationNavigation extends Schema.CollectionType {
+  collectionName: 'navigations';
+  info: {
+    singularName: 'navigation';
+    pluralName: 'navigations';
+    displayName: '\u041D\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044F \u043F\u043E \u0441\u0430\u0439\u0442\u0443';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::navigation.navigation', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::navigation.navigation', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::navigation.navigation', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::navigation.navigation', 'oneToOne', 'admin::user'>;
   };
 }
 
@@ -810,18 +906,42 @@ export interface ApiPageNewsPageNews extends Schema.SingleType {
   };
 }
 
+export interface ApiPaymentPayment extends Schema.CollectionType {
+  collectionName: 'payments';
+  info: {
+    singularName: 'payment';
+    pluralName: 'payments';
+    displayName: '\u0421\u043F\u043E\u0441\u043E\u0431\u044B \u043E\u043F\u043B\u0430\u0442\u044B';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::payment.payment', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::payment.payment', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::payment.payment', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::payment.payment', 'oneToOne', 'admin::user'>;
+  };
+}
+
 export interface ApiPhonePhone extends Schema.CollectionType {
   collectionName: 'phones';
   info: {
     singularName: 'phone';
     pluralName: 'phones';
     displayName: '\u041D\u043E\u043C\u0435\u0440\u0430 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u043E\u0432';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    phone: Attribute.Component<'general.phone'>;
+    text: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::phone.phone', 'oneToOne', 'admin::user'> & Attribute.Private;
@@ -855,6 +975,28 @@ export interface ApiRoomRoom extends Schema.CollectionType {
     updatedBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> & Attribute.Private;
     strapi_stage: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::workflow-stage'>;
     strapi_assignee: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'>;
+  };
+}
+
+export interface ApiSocialSocial extends Schema.CollectionType {
+  collectionName: 'socials';
+  info: {
+    singularName: 'social';
+    pluralName: 'socials';
+    displayName: '\u0421\u043E\u0446.\u0441\u0435\u0442\u0438';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::social.social', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::social.social', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::social.social', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::social.social', 'oneToOne', 'admin::user'>;
   };
 }
 
@@ -910,13 +1052,19 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::contact.contact': ApiContactContact;
+      'api::footer.footer': ApiFooterFooter;
+      'api::general.general': ApiGeneralGeneral;
+      'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
       'api::mail.mail': ApiMailMail;
+      'api::navigation.navigation': ApiNavigationNavigation;
       'api::new.new': ApiNewNew;
       'api::news-filter.news-filter': ApiNewsFilterNewsFilter;
       'api::page-news.page-news': ApiPageNewsPageNews;
+      'api::payment.payment': ApiPaymentPayment;
       'api::phone.phone': ApiPhonePhone;
       'api::room.room': ApiRoomRoom;
+      'api::social.social': ApiSocialSocial;
       'admin::audit-log': AdminAuditLog;
     }
   }

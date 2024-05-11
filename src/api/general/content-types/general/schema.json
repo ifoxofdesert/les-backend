@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "general",
+  "info": {
+    "singularName": "general",
+    "pluralName": "generals",
+    "displayName": "Общее",
+    "description": ""
+  },
+  "options": {
+    "reviewWorkflows": false,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "policyUrl": {
+      "type": "string"
+    }
+  }
+}

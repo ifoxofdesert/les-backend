@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Шапка",
+    "description": ""
+  },
+  "options": {
+    "reviewWorkflows": false,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "phone": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::phone.phone"
+    },
+    "menu": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation"
+    },
+    "socials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social.social"
+    }
+  }
+}

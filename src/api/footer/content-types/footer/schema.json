@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Подвал"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "phones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::phone.phone"
+    },
+    "menu": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation"
+    },
+    "navigation": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation"
+    },
+    "socials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social.social"
+    }
+  }
+}

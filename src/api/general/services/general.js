@@ -4,7 +4,9 @@
  * general service
  */
 
-module.exports = {
+const { createCoreService } = require('@strapi/strapi').factories;
+
+module.exports = createCoreService('api::general.general', ({ strapi }) => ({
   getImage(data) {
     if (data) {
       if (data.width > 1920) {
@@ -50,4 +52,90 @@ module.exports = {
       return [];
     }
   },
-};
+
+  async getGeneral() {
+    try {
+      let general = await strapi.entityService.findMany('api::general.general', {
+        populate: 'deep',
+      });
+
+      let contact = await strapi.entityService.findMany('api::contact.contact', {
+        populate: 'deep',
+      });
+
+      let payment = await strapi.entityService.findMany('api::payment.payment', {
+        populate: 'deep',
+      });
+
+      let footer = await strapi.entityService.findMany('api::footer.footer', {
+        populate: 'deep',
+      });
+
+      let header = await strapi.entityService.findMany('api::header.header', {
+        populate: 'deep',
+      });
+
+      return {
+        address: contact?.contactInfo?.address,
+        policyUrl: general?.policyUrl,
+        footer: {
+          phones: footer?.phones?.map((item) => {
+            return {
+              text: item?.text,
+              url: item?.url,
+            };
+          }),
+          menu: footer?.menu?.map((item) => {
+            return {
+              text: item?.text,
+              url: item?.url,
+            };
+          }),
+          navigation: footer?.navigation?.map((item) => {
+            return {
+              text: item?.text,
+              url: item?.url,
+            };
+          }),
+          socials: footer?.socials?.map((item) => {
+            return {
+              text: item?.text,
+              url: item?.url,
+            };
+          }),
+          payments: payment.map((item) => {
+            return {
+              src: this.getImage(item?.iamge),
+              alt: item?.iamge?.alternativeText,
+              url: item?.url,
+            };
+          }),
+        },
+        header: {
+          phone: {
+            text: header?.phone?.text,
+            url: header?.phone?.url,
+          },
+          menu: header?.menu?.map((item) => {
+            return {
+              text: item?.text,
+              url: item?.url,
+            };
+          }),
+          socials: header?.socials?.map((item) => {
+            return {
+              text: item?.text,
+              url: item?.url,
+            };
+          }),
+          logo: {
+            src: this.getImage(header?.logo),
+            alt: header?.logo?.alternativeText,
+          },
+        },
+      };
+    } catch (err) {
+      return err;
+    }
+  },
+}));

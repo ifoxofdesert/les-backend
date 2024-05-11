@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "phones",
+  "collectionName": "socials",
   "info": {
-    "singularName": "phone",
-    "pluralName": "phones",
-    "displayName": "Номера телефонов",
-    "description": ""
+    "singularName": "social",
+    "pluralName": "socials",
+    "displayName": "Соц.сети"
   },
   "options": {
     "draftAndPublish": false

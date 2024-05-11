@@ -14,9 +14,8 @@
   "pluginOptions": {},
   "attributes": {
     "mail": {
-      "type": "component",
-      "repeatable": false,
-      "component": "general.email"
+      "type": "string",
+      "required": true
     }
   }
 }

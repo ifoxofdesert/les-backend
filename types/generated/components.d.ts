@@ -87,17 +87,6 @@ export interface GeneralAfishaEventsBlock extends Schema.Component {
   };
 }
 
-export interface GeneralEmail extends Schema.Component {
-  collectionName: 'components_general_emails';
-  info: {
-    displayName: 'Email';
-    icon: 'envelop';
-  };
-  attributes: {
-    mail: Attribute.String & Attribute.Required;
-  };
-}
-
 export interface GeneralMeta extends Schema.Component {
   collectionName: 'components_general_metas';
   info: {
@@ -136,18 +125,6 @@ export interface GeneralOffersSlider extends Schema.Component {
     slideTitle: Attribute.String;
     slideSecondTitle: Attribute.String;
     slideDescription: Attribute.String;
-  };
-}
-
-export interface GeneralPhone extends Schema.Component {
-  collectionName: 'components_general_phones';
-  info: {
-    displayName: 'Phone';
-    icon: 'phone';
-  };
-  attributes: {
-    text: Attribute.String & Attribute.Required;
-    url: Attribute.String & Attribute.Required;
   };
 }
 
@@ -406,11 +383,9 @@ declare module '@strapi/types' {
       'contact-page.reservations': ContactPageReservations;
       'general.accordion': GeneralAccordion;
       'general.afisha-events-block': GeneralAfishaEventsBlock;
-      'general.email': GeneralEmail;
       'general.meta': GeneralMeta;
       'general.offers-slide': GeneralOffersSlide;
       'general.offers-slider': GeneralOffersSlider;
-      'general.phone': GeneralPhone;
       'general.questions-block': GeneralQuestionsBlock;
       'general.rooms-list-block': GeneralRoomsListBlock;
       'general.title-cutom': GeneralTitleCutom;

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "singularName": "payment",
+    "pluralName": "payments",
+    "displayName": "Способы оплаты"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

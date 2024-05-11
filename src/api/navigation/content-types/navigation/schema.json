@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "phones",
+  "collectionName": "navigations",
   "info": {
-    "singularName": "phone",
-    "pluralName": "phones",
-    "displayName": "Номера телефонов",
+    "singularName": "navigation",
+    "pluralName": "navigations",
+    "displayName": "Навигация по сайту",
     "description": ""
   },
   "options": {

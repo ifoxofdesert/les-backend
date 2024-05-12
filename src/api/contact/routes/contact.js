@@ -4,6 +4,16 @@
  * contact router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
-
-module.exports = createCoreRouter('api::contact.contact');
+module.exports = {
+  routes: [
+    {
+      method: 'GET',
+      path: '/getContact',
+      handler: 'contact.getContact',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
+  ],
+};

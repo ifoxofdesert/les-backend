@@ -2,7 +2,8 @@
   "collectionName": "components_contact_page_reservations",
   "info": {
     "displayName": "reservations",
-    "icon": "gate"
+    "icon": "gate",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,7 +14,7 @@
     },
     "mails": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::mail.mail"
     }
   }

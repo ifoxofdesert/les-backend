@@ -5,6 +5,7 @@ export interface ContactPageBanquets extends Schema.Component {
   info: {
     displayName: 'banquets';
     icon: 'cup';
+    description: '';
   };
   attributes: {
     phones: Attribute.Relation<'contact-page.banquets', 'oneToMany', 'api::phone.phone'>;
@@ -48,10 +49,11 @@ export interface ContactPageReservations extends Schema.Component {
   info: {
     displayName: 'reservations';
     icon: 'gate';
+    description: '';
   };
   attributes: {
     phones: Attribute.Relation<'contact-page.reservations', 'oneToMany', 'api::phone.phone'>;
-    mails: Attribute.Relation<'contact-page.reservations', 'oneToOne', 'api::mail.mail'>;
+    mails: Attribute.Relation<'contact-page.reservations', 'oneToMany', 'api::mail.mail'>;
   };
 }
 

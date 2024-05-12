@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_general_array_texts",
+  "info": {
+    "displayName": "arrayText",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

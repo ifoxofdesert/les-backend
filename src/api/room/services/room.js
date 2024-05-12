@@ -14,7 +14,7 @@ module.exports = createCoreService('api::room.room', ({ strapi }) => ({
         limit,
         sort,
         populate,
-        filters: JSON.parse(filters),
+        filters: filters ? JSON.parse(filters) : undefined,
       });
 
       const getImage = strapi.service('api::general.general').getImage;
@@ -46,7 +46,7 @@ module.exports = createCoreService('api::room.room', ({ strapi }) => ({
         limit,
         sort,
         populate,
-        filters: JSON.parse(filters),
+        filters: filters ? JSON.parse(filters) : undefined,
       });
 
       const room = rooms[0] || {};

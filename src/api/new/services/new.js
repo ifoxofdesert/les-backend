@@ -10,7 +10,7 @@ module.exports = createCoreService('api::new.new', ({ strapi }) => ({
   async getPage({ filters, limit, populate }) {
     try {
       let entries = await strapi.entityService.findMany('api::new.new', {
-        filters: JSON.parse(filters),
+        filters: filters ? JSON.parse(filters) : undefined,
         limit,
         populate,
       });

@@ -89,6 +89,17 @@ export interface GeneralAfishaEventsBlock extends Schema.Component {
   };
 }
 
+export interface GeneralArrayText extends Schema.Component {
+  collectionName: 'components_general_array_texts';
+  info: {
+    displayName: 'arrayText';
+    icon: 'pencil';
+  };
+  attributes: {
+    text: Attribute.Text;
+  };
+}
+
 export interface GeneralMeta extends Schema.Component {
   collectionName: 'components_general_metas';
   info: {
@@ -384,6 +395,7 @@ declare module '@strapi/types' {
       'contact-page.reservations': ContactPageReservations;
       'general.accordion': GeneralAccordion;
       'general.afisha-events-block': GeneralAfishaEventsBlock;
+      'general.array-text': GeneralArrayText;
       'general.meta': GeneralMeta;
       'general.offers-slide': GeneralOffersSlide;
       'general.offers-slider': GeneralOffersSlider;

@@ -906,6 +906,27 @@ export interface ApiPageNewsPageNews extends Schema.SingleType {
   };
 }
 
+export interface ApiPageVacancyPageVacancy extends Schema.SingleType {
+  collectionName: 'page_vacancies';
+  info: {
+    singularName: 'page-vacancy';
+    pluralName: 'page-vacancies';
+    displayName: '\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u0432\u0430\u043A\u0430\u043D\u0441\u0438\u0439';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    meta: Attribute.Component<'info-page.general'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page-vacancy.page-vacancy', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page-vacancy.page-vacancy', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::page-vacancy.page-vacancy', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::page-vacancy.page-vacancy', 'oneToOne', 'admin::user'>;
+  };
+}
+
 export interface ApiPaymentPayment extends Schema.CollectionType {
   collectionName: 'payments';
   info: {
@@ -1000,6 +1021,33 @@ export interface ApiSocialSocial extends Schema.CollectionType {
   };
 }
 
+export interface ApiVacancyVacancy extends Schema.CollectionType {
+  collectionName: 'vacancies';
+  info: {
+    singularName: 'vacancy';
+    pluralName: 'vacancies';
+    displayName: '\u0412\u0430\u043A\u0430\u043D\u0441\u0438\u0438';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    experience: Attribute.String;
+    employment: Attribute.String;
+    salary: Attribute.String;
+    responsibilities: Attribute.Component<'general.array-text', true>;
+    conditions: Attribute.Component<'general.array-text', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::vacancy.vacancy', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::vacancy.vacancy', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::vacancy.vacancy', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::vacancy.vacancy', 'oneToOne', 'admin::user'>;
+  };
+}
+
 export interface AdminAuditLog extends Schema.CollectionType {
   collectionName: 'strapi_audit_logs';
   info: {
@@ -1061,10 +1109,12 @@ declare module '@strapi/types' {
       'api::new.new': ApiNewNew;
       'api::news-filter.news-filter': ApiNewsFilterNewsFilter;
       'api::page-news.page-news': ApiPageNewsPageNews;
+      'api::page-vacancy.page-vacancy': ApiPageVacancyPageVacancy;
       'api::payment.payment': ApiPaymentPayment;
       'api::phone.phone': ApiPhonePhone;
       'api::room.room': ApiRoomRoom;
       'api::social.social': ApiSocialSocial;
+      'api::vacancy.vacancy': ApiVacancyVacancy;
       'admin::audit-log': AdminAuditLog;
     }
   }

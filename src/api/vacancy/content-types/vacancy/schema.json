@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancies",
+  "info": {
+    "singularName": "vacancy",
+    "pluralName": "vacancies",
+    "displayName": "Вакансии",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "experience": {
+      "type": "string"
+    },
+    "employment": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "string"
+    },
+    "responsibilities": {
+      "displayName": "arrayText",
+      "type": "component",
+      "repeatable": true,
+      "component": "general.array-text"
+    },
+    "conditions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.array-text"
+    }
+  }
+}

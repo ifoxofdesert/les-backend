@@ -5,7 +5,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://admin.skk-les.ru', 'https://skk-les.ru'],
+      origin: ['https://admin.skk-les.ru', 'https://skk-les.ru', 'http://localhost:3023/'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,

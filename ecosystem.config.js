@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'lesBack',
-      script: './server.js',
+      script: 'yarn',
       cwd: '/home/site/les-backend/',
       args: 'start',
       instances: 3,

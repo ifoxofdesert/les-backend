@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "info_datapages",
+  "info": {
+    "singularName": "info-datapage",
+    "pluralName": "info-datapages",
+    "displayName": "Простые страницы",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "lastUpdate": {
+      "type": "date"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "general.meta"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

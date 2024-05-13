@@ -785,6 +785,39 @@ export interface ApiHomeHome extends Schema.SingleType {
   };
 }
 
+export interface ApiInfoDatapageInfoDatapage extends Schema.CollectionType {
+  collectionName: 'info_datapages';
+  info: {
+    singularName: 'info-datapage';
+    pluralName: 'info-datapages';
+    displayName: '\u041F\u0440\u043E\u0441\u0442\u044B\u0435 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    slug: Attribute.UID<'api::info-datapage.info-datapage', 'title'>;
+    lastUpdate: Attribute.Date;
+    meta: Attribute.Component<'general.meta'> & Attribute.Required;
+    text: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::info-datapage.info-datapage', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::info-datapage.info-datapage', 'oneToOne', 'admin::user'> & Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::info-datapage.info-datapage', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::info-datapage.info-datapage', 'oneToOne', 'admin::user'>;
+  };
+}
+
 export interface ApiMailMail extends Schema.CollectionType {
   collectionName: 'mails';
   info: {
@@ -999,6 +1032,30 @@ export interface ApiRoomRoom extends Schema.CollectionType {
   };
 }
 
+export interface ApiSettingInfoPageSettingInfoPage extends Schema.SingleType {
+  collectionName: 'settings_info_pages';
+  info: {
+    singularName: 'setting-info-page';
+    pluralName: 'settings-info-pages';
+    displayName: '\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u043F\u0440\u043E\u0441\u0442\u044B\u0445 \u0441\u0442\u0440\u0430\u043D\u0438\u0446';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    menu: Attribute.Relation<'api::setting-info-page.setting-info-page', 'oneToMany', 'api::navigation.navigation'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::setting-info-page.setting-info-page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::setting-info-page.setting-info-page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::setting-info-page.setting-info-page', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::setting-info-page.setting-info-page', 'oneToOne', 'admin::user'>;
+  };
+}
+
 export interface ApiSocialSocial extends Schema.CollectionType {
   collectionName: 'socials';
   info: {
@@ -1104,6 +1161,7 @@ declare module '@strapi/types' {
       'api::general.general': ApiGeneralGeneral;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
+      'api::info-datapage.info-datapage': ApiInfoDatapageInfoDatapage;
       'api::mail.mail': ApiMailMail;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::new.new': ApiNewNew;
@@ -1113,6 +1171,7 @@ declare module '@strapi/types' {
       'api::payment.payment': ApiPaymentPayment;
       'api::phone.phone': ApiPhonePhone;
       'api::room.room': ApiRoomRoom;
+      'api::setting-info-page.setting-info-page': ApiSettingInfoPageSettingInfoPage;
       'api::social.social': ApiSocialSocial;
       'api::vacancy.vacancy': ApiVacancyVacancy;
       'admin::audit-log': AdminAuditLog;

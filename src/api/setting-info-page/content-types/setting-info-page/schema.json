@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings_info_pages",
+  "info": {
+    "singularName": "setting-info-page",
+    "pluralName": "settings-info-pages",
+    "displayName": "Настройки простых страниц",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menu": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation"
+    }
+  }
+}

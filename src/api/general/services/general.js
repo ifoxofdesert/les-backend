@@ -9,7 +9,7 @@ const { createCoreService } = require('@strapi/strapi').factories;
 module.exports = createCoreService('api::general.general', ({ strapi }) => ({
   getImage(data) {
     if (data) {
-      if (data.width > 1920) {
+      if (data?.formats && data.width > 1920) {
         return data.formats.default.url;
       } else {
         return data.url;

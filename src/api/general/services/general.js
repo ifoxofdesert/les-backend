@@ -105,8 +105,8 @@ module.exports = createCoreService('api::general.general', ({ strapi }) => ({
           }),
           payments: payment.map((item) => {
             return {
-              src: this.getImage(item?.iamge),
-              alt: item?.iamge?.alternativeText,
+              src: this.getImage(item?.image),
+              alt: item?.image?.alternativeText,
               url: item?.url,
             };
           }),

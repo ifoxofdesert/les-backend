@@ -97,7 +97,7 @@ export interface GeneralArrayText extends Schema.Component {
     description: '';
   };
   attributes: {
-    text: Attribute.Text;
+    text: Attribute.String;
   };
 }
 

@@ -368,6 +368,7 @@ export interface RoomPagePreviewCard extends Schema.Component {
   attributes: {
     description: Attribute.Text & Attribute.Required;
     img: Attribute.Media;
+    shortName: Attribute.String & Attribute.Required;
   };
 }
 

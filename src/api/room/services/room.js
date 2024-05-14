@@ -21,7 +21,7 @@ module.exports = createCoreService('api::room.room', ({ strapi }) => ({
 
       if (rooms?.length) {
         return rooms?.map((room) => ({
-          title: room?.title,
+          title: room?.preview?.shortName,
           area: room?.pageRoom?.area,
           persons: room?.pageRoom?.persons,
           img: {

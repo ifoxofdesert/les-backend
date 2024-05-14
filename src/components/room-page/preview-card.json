@@ -18,6 +18,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "shortName": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -12,7 +12,7 @@ module.exports = createCoreService('api::room.room', ({ strapi }) => ({
       let rooms = await strapi.entityService.findMany('api::room.room', {
         start,
         limit,
-        sort,
+        sort: sort || undefined,
         populate,
         filters: filters ? JSON.parse(filters) : undefined,
       });

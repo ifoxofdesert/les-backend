@@ -94,6 +94,7 @@ export interface GeneralArrayText extends Schema.Component {
   info: {
     displayName: 'arrayText';
     icon: 'pencil';
+    description: '';
   };
   attributes: {
     text: Attribute.Text;

@@ -1023,6 +1023,15 @@ export interface ApiRoomRoom extends Schema.CollectionType {
     meta: Attribute.Component<'general.meta'> & Attribute.Required;
     pageRoom: Attribute.Component<'room-page.page-room'>;
     preview: Attribute.Component<'room-page.preview-card'>;
+    order: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: '0';
+        },
+        string
+      > &
+      Attribute.DefaultTo<'0'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> & Attribute.Private;

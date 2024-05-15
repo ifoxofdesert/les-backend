@@ -117,7 +117,7 @@ module.exports = createCoreService('api::room.room', ({ strapi }) => ({
           roomListDescription: room?.pageRoom?.roomListDescription,
           roomList: room?.pageRoom?.roomList?.map((room) => {
             return {
-              title: room?.title,
+              title: room?.preview?.shortName,
               area: room?.pageRoom?.area,
               persons: room?.pageRoom?.persons,
               img: {

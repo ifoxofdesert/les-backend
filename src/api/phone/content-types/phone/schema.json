@@ -19,6 +19,10 @@
     "url": {
       "type": "string",
       "required": true
+    },
+    "mission": {
+      "type": "string",
+      "required": true
     }
   }
 }

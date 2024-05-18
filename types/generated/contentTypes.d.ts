@@ -996,6 +996,7 @@ export interface ApiPhonePhone extends Schema.CollectionType {
   attributes: {
     text: Attribute.String & Attribute.Required;
     url: Attribute.String & Attribute.Required;
+    mission: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::phone.phone', 'oneToOne', 'admin::user'> & Attribute.Private;

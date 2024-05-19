@@ -23,6 +23,7 @@ module.exports = createCoreService('api::contact.contact', ({ strapi }) => ({
             phones: contact?.contactInfo?.reservation?.phones?.map((item) => ({
               text: item?.text,
               url: item?.url,
+              mission: item?.mission,
             })),
             emails: contact?.contactInfo?.reservation?.mails?.map((item) => item?.mail),
           },
@@ -30,6 +31,7 @@ module.exports = createCoreService('api::contact.contact', ({ strapi }) => ({
             phones: contact?.contactInfo?.banquet?.phones?.map((item) => ({
               text: item?.text,
               url: item?.url,
+              mission: item?.mission,
             })),
             emails: contact?.contactInfo?.banquet?.mails?.map((item) => item?.mail),
           },

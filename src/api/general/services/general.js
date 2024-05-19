@@ -116,7 +116,7 @@ module.exports = createCoreService('api::general.general', ({ strapi }) => ({
           phone: {
             text: header?.phone?.text,
             url: header?.phone?.url,
-            mission: item?.mission,
+            mission: header?.phone?.mission,
           },
           menu: header?.menu?.map((item) => {
             return {

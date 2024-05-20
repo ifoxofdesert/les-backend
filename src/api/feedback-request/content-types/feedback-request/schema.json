@@ -4,7 +4,7 @@
   "info": {
     "singularName": "feedback-request",
     "pluralName": "feedback-requests",
-    "displayName": "feedbackRequests",
+    "displayName": "Заявки формы обратной связи",
     "description": ""
   },
   "options": {

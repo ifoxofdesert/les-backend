@@ -688,7 +688,7 @@ export interface ApiFeedbackRequestFeedbackRequest extends Schema.CollectionType
   info: {
     singularName: 'feedback-request';
     pluralName: 'feedback-requests';
-    displayName: 'feedbackRequests';
+    displayName: '\u0417\u0430\u044F\u0432\u043A\u0438 \u0444\u043E\u0440\u043C\u044B \u043E\u0431\u0440\u0430\u0442\u043D\u043E\u0439 \u0441\u0432\u044F\u0437\u0438';
     description: '';
   };
   options: {
@@ -720,7 +720,7 @@ export interface ApiFeedbackRequestSettingFeedbackRequestSetting extends Schema.
   info: {
     singularName: 'feedback-request-setting';
     pluralName: 'feedback-request-settings';
-    displayName: 'feedbackRequestSettings';
+    displayName: '\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0444\u043E\u0440\u043C\u044B \u043E\u0431\u0440\u0430\u0442\u043D\u043E\u0439 \u0441\u0432\u044F\u0437\u0438';
   };
   options: {
     draftAndPublish: false;

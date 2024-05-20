@@ -4,7 +4,7 @@
   "info": {
     "singularName": "feedback-request-setting",
     "pluralName": "feedback-request-settings",
-    "displayName": "feedbackRequestSettings"
+    "displayName": "Настройки формы обратной связи"
   },
   "options": {
     "draftAndPublish": false

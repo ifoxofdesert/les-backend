@@ -80,7 +80,7 @@ module.exports = createCoreService('api::general.general', ({ strapi }) => ({
       return {
         address: contact?.contactInfo?.address,
         policyUrl: general?.policyUrl,
-        formPopup: {
+        formFeedback: {
           title: formPopup?.title,
           description: formPopup?.description,
         },

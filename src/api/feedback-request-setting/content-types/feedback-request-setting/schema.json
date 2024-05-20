@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "feedback_request_settings",
+  "info": {
+    "singularName": "feedback-request-setting",
+    "pluralName": "feedback-request-settings",
+    "displayName": "feedbackRequestSettings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "emails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mail.mail"
+    }
+  }
+}

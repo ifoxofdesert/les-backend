@@ -683,6 +683,71 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiFeedbackRequestFeedbackRequest extends Schema.CollectionType {
+  collectionName: 'feedback_requests';
+  info: {
+    singularName: 'feedback-request';
+    pluralName: 'feedback-requests';
+    displayName: 'feedbackRequests';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    phone: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 12;
+        maxLength: 18;
+      }>;
+    email: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::feedback-request.feedback-request', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::feedback-request.feedback-request', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    strapi_stage: Attribute.Relation<'api::feedback-request.feedback-request', 'oneToOne', 'admin::workflow-stage'>;
+    strapi_assignee: Attribute.Relation<'api::feedback-request.feedback-request', 'oneToOne', 'admin::user'>;
+  };
+}
+
+export interface ApiFeedbackRequestSettingFeedbackRequestSetting extends Schema.SingleType {
+  collectionName: 'feedback_request_settings';
+  info: {
+    singularName: 'feedback-request-setting';
+    pluralName: 'feedback-request-settings';
+    displayName: 'feedbackRequestSettings';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    emails: Attribute.Relation<'api::feedback-request-setting.feedback-request-setting', 'oneToMany', 'api::mail.mail'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::feedback-request-setting.feedback-request-setting', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::feedback-request-setting.feedback-request-setting', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    strapi_stage: Attribute.Relation<
+      'api::feedback-request-setting.feedback-request-setting',
+      'oneToOne',
+      'admin::workflow-stage'
+    >;
+    strapi_assignee: Attribute.Relation<
+      'api::feedback-request-setting.feedback-request-setting',
+      'oneToOne',
+      'admin::user'
+    >;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -1168,6 +1233,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::contact.contact': ApiContactContact;
+      'api::feedback-request.feedback-request': ApiFeedbackRequestFeedbackRequest;
+      'api::feedback-request-setting.feedback-request-setting': ApiFeedbackRequestSettingFeedbackRequestSetting;
       'api::footer.footer': ApiFooterFooter;
       'api::general.general': ApiGeneralGeneral;
       'api::header.header': ApiHeaderHeader;

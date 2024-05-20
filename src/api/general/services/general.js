@@ -75,9 +75,15 @@ module.exports = createCoreService('api::general.general', ({ strapi }) => ({
         populate: 'deep',
       });
 
+      let formPopup = await strapi.entityService.findMany('api::feedback-request-setting.feedback-request-setting');
+
       return {
         address: contact?.contactInfo?.address,
         policyUrl: general?.policyUrl,
+        formPopup: {
+          title: formPopup?.title,
+          description: formPopup?.description,
+        },
         footer: {
           phones: footer?.phones?.map((item) => {
             return {

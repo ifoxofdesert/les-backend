@@ -156,6 +156,41 @@ export interface GeneralQuestionsBlock extends Schema.Component {
   };
 }
 
+export interface GeneralReviewSlider extends Schema.Component {
+  collectionName: 'components_general_review_sliders';
+  info: {
+    displayName: 'reviewSlider';
+    icon: 'discuss';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    slides: Attribute.Component<'general.review', true> & Attribute.Required;
+  };
+}
+
+export interface GeneralReview extends Schema.Component {
+  collectionName: 'components_general_reviews';
+  info: {
+    displayName: 'Review';
+    icon: 'message';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    stars: Attribute.Integer &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 5;
+        },
+        number
+      >;
+    text: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface GeneralRoomsListBlock extends Schema.Component {
   collectionName: 'components_general_rooms_list_blocks';
   info: {
@@ -402,6 +437,8 @@ declare module '@strapi/types' {
       'general.offers-slide': GeneralOffersSlide;
       'general.offers-slider': GeneralOffersSlider;
       'general.questions-block': GeneralQuestionsBlock;
+      'general.review-slider': GeneralReviewSlider;
+      'general.review': GeneralReview;
       'general.rooms-list-block': GeneralRoomsListBlock;
       'general.title-cutom': GeneralTitleCutom;
       'general.video': GeneralVideo;

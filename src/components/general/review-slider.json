@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_general_review_sliders",
+  "info": {
+    "displayName": "reviewSlider",
+    "icon": "discuss",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "general.review"
+    }
+  }
+}

@@ -53,6 +53,11 @@
       "type": "component",
       "repeatable": false,
       "component": "general.afisha-events-block"
+    },
+    "reviewSlider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.review-slider"
     }
   }
 }

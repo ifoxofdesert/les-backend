@@ -776,6 +776,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     questions: Attribute.Component<'general.questions-block'>;
     roomsListBlock: Attribute.Component<'general.rooms-list-block'>;
     afishaEventsBlock: Attribute.Component<'general.afisha-events-block'>;
+    reviewSlider: Attribute.Component<'general.review-slider'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> & Attribute.Private;

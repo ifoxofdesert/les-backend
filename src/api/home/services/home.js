@@ -23,7 +23,10 @@ module.exports = createCoreService('api::home.home', ({ strapi }) => ({
           pagetitle: home?.meta?.pagetitle,
           pageDescription: home?.meta?.pageDescription,
           mainBlock: {
-            mainTitle: home?.mainBlock?.mainTitle,
+            mainTitle: {
+              first: home?.mainBlock?.mainTitle?.first,
+              second: home?.mainBlock?.mainTitle?.second,
+            },
             mainImage: {
               src: getImage(home?.mainBlock?.mainImage),
               alt: home?.mainBlock?.mainImage?.alternativeText,
@@ -58,6 +61,15 @@ module.exports = createCoreService('api::home.home', ({ strapi }) => ({
           roomsListBlock: {
             title: home?.roomsListBlock?.title,
             description: home?.roomsListBlock?.description,
+          },
+          reviewSlider: {
+            title: home?.reviewSlider?.title,
+            description: home?.reviewSlider?.description,
+            slides: home?.reviewSlider?.slides?.map((item) => ({
+              text: item?.text,
+              name: item?.name,
+              stars: item?.stars,
+            })),
           },
           afishaEvents: {
             titleCustom: {

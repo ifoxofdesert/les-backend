@@ -26,7 +26,8 @@ module.exports = createCoreService('api::feedback-request.feedback-request', ({ 
 
       const emails = data?.emails.map((email) => email.mail) || [];
       if (emails.length) {
-        await strapi.plugins['email'].services.email.send({
+        console.log(123);
+        const test = await strapi.plugins['email'].services.email.send({
           to: emails.join(','),
           subject: 'Новая заявка с сайта',
           html: `
@@ -37,6 +38,8 @@ module.exports = createCoreService('api::feedback-request.feedback-request', ({ 
             <b>Комментарий:</b> ${description || 'Комментарий не оставили'}<br>
             `,
         });
+
+        console.log(test);
       }
 
       return {

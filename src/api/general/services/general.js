@@ -124,6 +124,10 @@ module.exports = createCoreService('api::general.general', ({ strapi }) => ({
             url: header?.phone?.url,
             mission: header?.phone?.mission,
           },
+          burgerBackground: {
+            src: this.getImage(header?.burgerBackground),
+            alt: header?.burgerBackground?.alternativeText,
+          },
           menu: header?.menu?.map((item) => {
             return {
               text: item?.text,

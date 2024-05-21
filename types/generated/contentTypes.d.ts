@@ -812,6 +812,7 @@ export interface ApiHeaderHeader extends Schema.SingleType {
     phone: Attribute.Relation<'api::header.header', 'oneToOne', 'api::phone.phone'>;
     menu: Attribute.Relation<'api::header.header', 'oneToMany', 'api::navigation.navigation'>;
     socials: Attribute.Relation<'api::header.header', 'oneToMany', 'api::social.social'>;
+    burgerBackground: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::header.header', 'oneToOne', 'admin::user'> & Attribute.Private;

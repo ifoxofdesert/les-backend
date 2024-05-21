@@ -4,7 +4,8 @@
   "info": {
     "singularName": "feedback-request-setting",
     "pluralName": "feedback-request-settings",
-    "displayName": "Настройки формы обратной связи"
+    "displayName": "Настройки формы обратной связи",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -23,6 +24,14 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::mail.mail"
+    },
+    "succesTitle": {
+      "type": "string",
+      "required": true
+    },
+    "succesText": {
+      "type": "text",
+      "required": false
     }
   }
 }

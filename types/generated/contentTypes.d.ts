@@ -721,6 +721,7 @@ export interface ApiFeedbackRequestSettingFeedbackRequestSetting extends Schema.
     singularName: 'feedback-request-setting';
     pluralName: 'feedback-request-settings';
     displayName: '\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0444\u043E\u0440\u043C\u044B \u043E\u0431\u0440\u0430\u0442\u043D\u043E\u0439 \u0441\u0432\u044F\u0437\u0438';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -729,6 +730,8 @@ export interface ApiFeedbackRequestSettingFeedbackRequestSetting extends Schema.
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     emails: Attribute.Relation<'api::feedback-request-setting.feedback-request-setting', 'oneToMany', 'api::mail.mail'>;
+    succesTitle: Attribute.String & Attribute.Required;
+    succesText: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::feedback-request-setting.feedback-request-setting', 'oneToOne', 'admin::user'> &

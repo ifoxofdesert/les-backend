@@ -83,6 +83,10 @@ module.exports = createCoreService('api::general.general', ({ strapi }) => ({
         formFeedback: {
           title: formPopup?.title,
           description: formPopup?.description,
+          succes: {
+            title: formPopup?.succesTitle,
+            text: formPopup?.succesText,
+          },
         },
         footer: {
           phones: footer?.phones?.map((item) => {

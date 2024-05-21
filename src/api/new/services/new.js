@@ -52,18 +52,39 @@ module.exports = createCoreService('api::new.new', ({ strapi }) => ({
   },
   async getPreviews({ page, pageSize, sort, populate, filters }) {
     try {
+      const filterData = filters ? JSON.parse(filters) : undefined;
+
       let entries = await strapi.entityService.findPage('api::new.new', {
         pageSize,
         page,
         sort,
         populate,
-        filters: filters ? JSON.parse(filters) : undefined,
+        filters: filterData,
+      });
+
+      let tagsFilter = undefined;
+
+      if (filterData?.$and?.pageNews?.type?.tag || filterData?.pageNews?.type?.tag) {
+        tagsFilter = {
+          pageNews: {
+            type: { tag: { $eq: filterData?.$and?.pageNews?.type?.tag?.$eq || filterData?.pageNews?.type?.tag?.$eq } },
+          },
+        };
+      }
+
+      let allNews = await strapi.entityService.findMany('api::new.new', {
+        sort,
+        populate: {
+          PreviewCard: true,
+        },
+        filters: tagsFilter,
       });
 
       const getImage = strapi.service('api::general.general').getImage;
 
       if (entries?.results?.length) {
         return {
+          dateEvents: allNews.map((item) => item?.PreviewCard?.date),
           result: entries?.results?.map((item) => {
             return {
               title: item.title,

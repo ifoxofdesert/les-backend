@@ -41,7 +41,18 @@ module.exports = createCoreService('api::new.new', ({ strapi }) => ({
           slideText: data.pageNews.slideText,
           buttonAfterActive: data.pageNews.buttonAfterActive,
           buttonBeforeActive: data.pageNews.buttonBeforeActive,
-          slideItem: data?.pageNews?.slideItem?.map((slide) => slide?.pageNews?.image || {}),
+          slideItem: data?.pageNews?.slideItem?.map((slide) => ({
+            date: slide?.PreviewCard?.date,
+            position: slide?.PreviewCard?.position,
+            description: slide?.PreviewCard?.description,
+            type: slide?.pageNews?.type,
+            title: slide?.title,
+            slug: slide?.slug,
+            image: {
+              src: getImage(slide?.PreviewCard?.image),
+              alt: slide?.PreviewCard?.image?.alternativeText,
+            },
+          })),
         };
       } else {
         return {};
@@ -91,8 +102,8 @@ module.exports = createCoreService('api::new.new', ({ strapi }) => ({
               slug: item.slug,
               type: item.pageNews.type,
               image: {
-                src: getImage(item?.pageNews?.image),
-                alt: item?.pageNews?.image?.alternativeText,
+                src: getImage(item?.PreviewCard?.image),
+                alt: item?.PreviewCard?.image?.alternativeText,
               },
               date: item.PreviewCard.date,
               position: item.PreviewCard.position,

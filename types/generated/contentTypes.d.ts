@@ -925,6 +925,7 @@ export interface ApiNavigationNavigation extends Schema.CollectionType {
   attributes: {
     text: Attribute.String & Attribute.Required;
     url: Attribute.String & Attribute.Required;
+    isTravel: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::navigation.navigation', 'oneToOne', 'admin::user'> & Attribute.Private;

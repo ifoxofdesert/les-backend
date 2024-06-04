@@ -953,6 +953,15 @@ export interface ApiNewNew extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::new.new', 'title'> & Attribute.Required;
     meta: Attribute.Component<'general.meta'> & Attribute.Required;
+    order: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: '0';
+        },
+        string
+      > &
+      Attribute.DefaultTo<'0'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> & Attribute.Private;

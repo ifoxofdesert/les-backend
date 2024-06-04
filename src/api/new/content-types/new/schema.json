@@ -39,6 +39,12 @@
       "repeatable": false,
       "component": "general.meta",
       "required": true
+    },
+    "order": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true,
+      "min": "0"
     }
   }
 }

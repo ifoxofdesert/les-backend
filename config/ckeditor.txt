@@ -23,6 +23,19 @@ globalThis.CKEditorConfig = {
             },
 
             editorConfig:{
+
+              link: {
+                decorators: {
+                    openInNewTab: {
+                        mode: 'manual',
+                        label: 'Открыть в новой вкладке',
+                        attributes: {
+                            target: '_blank',
+                            rel: 'noopener noreferrer'
+                        }
+                    }
+                }
+            },
                 
                 plugins: [
                     CKEditor5.autoformat.Autoformat,
@@ -120,5 +133,7 @@ globalThis.CKEditorConfig = {
         // dark:``,
         // additional:``
     }
+
+
 
 }

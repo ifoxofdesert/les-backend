@@ -3,6 +3,7 @@ module.exports = ({ env }) => ({
     config: {
       breakpoints: {
         default: 1920,
+        1400: 1400,
       },
     },
   },

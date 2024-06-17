@@ -49,6 +49,8 @@ globalThis.CKEditorConfig = {
                     CKEditor5.image.ImageStyle,
                     CKEditor5.image.ImageToolbar,
                     CKEditor5.image.ImageUpload,
+                    CKEditor5.image.ImageResizeEditing,
+                    CKEditor5.image.ImageResizeHandles,
                     CKEditor5.indent.Indent,
                     CKEditor5.link.Link,
                     CKEditor5.list.List,

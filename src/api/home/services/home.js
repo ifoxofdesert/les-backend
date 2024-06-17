@@ -46,6 +46,14 @@ module.exports = createCoreService('api::home.home', ({ strapi }) => ({
             poster: getImage(home?.video?.poster),
             sources: getVideo(home?.video?.video),
           },
+          gallaryBlock: {
+            gallaryTitle: home?.gallaryBlock?.gallaryTitle,
+            gallaryDescription: home?.gallaryBlock?.gallaryDescription,
+            gallary: home?.gallaryBlock?.gallary?.map((item) => ({
+              src: getImage(item),
+              alt: item?.alternativeText,
+            })),
+          },
           questions: {
             title: home?.questions?.title,
             secondTitle: home?.questions?.secondTitle,

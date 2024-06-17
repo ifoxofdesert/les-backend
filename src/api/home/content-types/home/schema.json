@@ -58,6 +58,12 @@
       "type": "component",
       "repeatable": false,
       "component": "general.review-slider"
+    },
+    "gallaryBlock": {
+      "displayName": "GallaryBlock",
+      "type": "component",
+      "repeatable": false,
+      "component": "home.gallary-block"
     }
   }
 }

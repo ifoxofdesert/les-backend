@@ -228,6 +228,19 @@ export interface GeneralVideo extends Schema.Component {
   };
 }
 
+export interface HomeGallaryBlock extends Schema.Component {
+  collectionName: 'components_home_gallary_blocks';
+  info: {
+    displayName: 'GallaryBlock';
+    icon: 'picture';
+  };
+  attributes: {
+    gallaryTitle: Attribute.String;
+    gallaryDescription: Attribute.Text;
+    gallary: Attribute.Media;
+  };
+}
+
 export interface HomeMainBlock extends Schema.Component {
   collectionName: 'components_home_main_blocks';
   info: {
@@ -442,6 +455,7 @@ declare module '@strapi/types' {
       'general.rooms-list-block': GeneralRoomsListBlock;
       'general.title-cutom': GeneralTitleCutom;
       'general.video': GeneralVideo;
+      'home.gallary-block': HomeGallaryBlock;
       'home.main-block': HomeMainBlock;
       'info-page.general': InfoPageGeneral;
       'news-page.page-news': NewsPagePageNews;

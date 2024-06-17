@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_gallary_blocks",
+  "info": {
+    "displayName": "GallaryBlock",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "gallaryTitle": {
+      "type": "string"
+    },
+    "gallaryDescription": {
+      "type": "text"
+    },
+    "gallary": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
